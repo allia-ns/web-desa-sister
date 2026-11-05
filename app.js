@@ -5,6 +5,13 @@ function uc(judul = "Under Construction", teks = "Data untuk bagian ini sedang d
   return `<div class="uc"><span>⚠</span><h4>${judul}</h4><p>${teks}</p></div>`;
 }
 
+function orang(o, d, utama = false) {
+  const gambar = o.foto
+    ? `<img src="${o.foto}" alt="${o.nama}" loading="lazy">`
+    : `<div class="ph">${o.nama[0]}</div>`;
+  return `<div class="person ${utama ? "utama" : ""}">${gambar}<b>${o.nama}</b><small>${o.jabatan}</small></div>`;
+}
+
 function compass(b) {
   const lab = (cls, arah, isi) =>
     `<div class="cp ${cls}"><small>${arah}</small><b>${isi ?? "—"}</b></div>`;
@@ -142,9 +149,10 @@ function renderDesa() {
         </figure>
       </div>`)}
 
-    ${sec("pemerintahan", "Pemerintahan Desa", `<div class="people">${d.perangkat.map(o => `
-      <div class="person">${o.foto ? `<img src="${o.foto}" alt="${o.nama}">` : `<div class="ph">${o.nama[0]}</div>`}
-      <b>${o.nama}</b><small>${o.jabatan}</small></div>`).join("")}</div>`)}
+    ${sec("pemerintahan", "Pemerintahan Desa", `
+      ${d.perangkat.slice(0, 1).map(o => orang(o, d, true)).join("")}
+      <div class="people">${d.perangkat.slice(1).map(o => orang(o, d)).join("")}</div>
+      ${d.perangkat.length < 3 ? uc("Perangkat desa lainnya", "Daftar perangkat desa & staf sedang dilengkapi.") : ""}`)}
 
     ${sec("pendidikan", "Fasilitas Pendidikan", `<ul class="list2">${d.pendidikan.map(x => `<li>${x}</li>`).join("")}</ul>`)}
     ${sec("layanan", "Layanan Desa", d.layanan ? "" : uc("Layanan Desa"))}
