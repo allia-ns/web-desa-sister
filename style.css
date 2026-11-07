@@ -130,6 +130,11 @@ footer{background:#2a0207;color:#fff;padding:30px 0;text-align:center;font-size:
 .rose .hub{fill:#fff;stroke:var(--acc);stroke-width:2}
 .rose .lt{font:700 13px Poppins,sans-serif;fill:var(--md);text-anchor:middle}
 
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.gallery figure{margin:0;background:#fff;border:1px solid var(--line);overflow:hidden}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gallery figcaption{padding:8px 12px;font-size:.85rem;color:var(--mut)}
+
 .map iframe{display:block;width:50%;aspect-ratio:16/9;min-height:280px;border:0}
 
 @media(max-width:820px){

@@ -155,9 +155,18 @@ function renderDesa() {
       ${d.perangkat.length < 3 ? uc("Perangkat desa lainnya", "Daftar perangkat desa & staf sedang dilengkapi.") : ""}`)}
 
     ${sec("pendidikan", "Fasilitas Pendidikan", `<ul class="list2">${d.pendidikan.map(x => `<li>${x}</li>`).join("")}</ul>`)}
-    ${sec("layanan", "Layanan Desa", d.layanan ? "" : uc("Layanan Desa"))}
-    ${sec("galeri", "Galeri", d.galeri ? "" : uc("Galeri Kegiatan"))}
-    ${sec("lokasi", "Lokasi Kantor Desa", `
+    
+    ${sec("layanan", "Layanan Desa", d.layanan
+      ? `<ul class="list2">${d.layanan.map(x => `<li>${x}</li>`).join("")}</ul>`
+      : uc("Layanan Desa"))}
+    
+    ${sec("galeri", "Galeri", d.galeri
+      ? `<div class="gallery">${d.galeri.map(g =>
+          `<figure><img src="${g.img}" alt="${g.ket ?? "Galeri Desa " + d.nama}" loading="lazy">
+          ${g.ket ? `<figcaption>${g.ket}</figcaption>` : ""}</figure>`).join("")}</div>`
+      : uc("Galeri Kegiatan"))}
+    
+      ${sec("lokasi", "Lokasi Kantor Desa", `
       <p>${d.alamatKantor}</p>
       ${d.lokasi
         ? `<div class="map"><iframe src="${d.lokasi.embed}" title="Peta kantor Desa ${d.nama}"
