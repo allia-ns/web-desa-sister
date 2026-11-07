@@ -49,6 +49,7 @@ const DESA = {
       {img: "img/palur/galeri3.jpg", ket: "Halal Bihalal"}
     ], 
     lokasi: { embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.489928309742!2d110.87181657181237!3d-7.577171044464595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bc90eb76a1%3A0xbf55990fe38fa534!2skantor%20kepala%20desa%20palur%20mojolaban%20sukoharjo!5e0!3m2!1sid!2sid!4v1793854780830!5m2!1sid!2sid" },
+    petaAdmin: "img/palur/peta-administrasi.png",
   },
 
   gadingan: {
@@ -98,6 +99,7 @@ const DESA = {
       {img: "img/gadingan/galeri4.jpeg", ket: "Meninjau pembangunan KOPDES"}
     ], 
     lokasi: { embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31639.39688429029!2d110.80902007431645!3d-7.583185299999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16492496322d%3A0xccc7d52a92f7e1e!2sKantor%20Kepala%20Desa%20Gadingan%20Kec.%20Mojolaban!5e0!3m2!1sid!2sid!4v1793855187575!5m2!1sid!2sid" },
+    petaAdmin: null,
   },
 
   plumbon: {
@@ -145,5 +147,6 @@ const DESA = {
       {img: "img/plumbon/galeri3.jpeg", ket: "Musyawarah perencanaan pembangunan desa"},
     ],
     lokasi: { embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31639.396955513505!2d110.80902006100648!3d-7.583184331183583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16329506d369%3A0xb85e301065b55a7d!2sKantor%20Kepala%20Desa%20Plumbon!5e0!3m2!1sid!2sid!4v1793855402783!5m2!1sid!2sid" },
+    petaAdmin: null,
   },
 };

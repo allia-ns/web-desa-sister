@@ -129,7 +129,14 @@ function renderDesa() {
       ${kv([["Lahan sawah", fmt(d.lahan.sawah) + " ha"], ["Lahan bukan sawah", fmt(d.lahan.bukanSawah) + " ha"],
             ["Lahan bukan pertanian", fmt(d.lahan.bukanPertanian) + " ha"]])}
       <h3>${d.jumlahDusun} Dusun/Dukuh</h3>
-      <div class="chips">${d.dusun.map(x => `<span>${x}</span>`).join("")}</div>`)}
+      <div class="chips">${d.dusun.map(x => `<span>${x}</span>`).join("")}</div>
+      <h3>Peta Administrasi</h3>
+      ${d.petaAdmin
+        ? `<a class="peta" href="${d.petaAdmin}" target="_blank" rel="noopener" title="Klik untuk memperbesar">
+             <img src="${d.petaAdmin}" alt="Peta administrasi Desa ${d.nama}" loading="lazy">
+           </a>`
+        : uc("Peta Administrasi", `Peta administrasi Desa ${d.nama} belum tersedia.`)}
+      `)}
 
     ${sec("penduduk", "Kependudukan", `
       <div class="pop">
